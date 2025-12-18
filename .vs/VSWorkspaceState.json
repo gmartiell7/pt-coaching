@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\api",
+    "\\src\\app",
+    "\\src\\app\\contatti",
+    "\\src\\app\\percorsi",
+    "\\src\\app\\servizi",
+    "\\src\\app\\testimonianze",
+    "\\src\\components",
+    "\\src\\lib"
+  ],
+  "SelectedNode": "\\src\\components\\FAQ.tsx",
+  "PreviewInSolutionExplorer": false
+}
