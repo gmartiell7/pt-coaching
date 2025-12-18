@@ -8,7 +8,7 @@ export default function HomePage() {
     return (
         <div className="pt-16">
             {/* HERO */}
-            <FadeIn>
+            
                 <section className="min-h-[80vh] flex items-center bg-gradient-to-b from-black to-zinc-900">
                     <div className="max-w-6xl mx-auto px-6 text-center">
                         <h1 className="font-poppins text-4xl md:text-6xl font-bold mb-6">
@@ -32,7 +32,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </section>
-            </FadeIn>
+            
 
             {/* SERVIZI */}
             <section className="max-w-7xl mx-auto px-6 py-24">

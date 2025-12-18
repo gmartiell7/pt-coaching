@@ -1,8 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import {
+    motion,
+    useScroll,
+    useMotionValueEvent,
+    AnimatePresence,
+} from "framer-motion";
+import { useState, useEffect } from "react";
+
+// ✅ componenti intermedi (fix parser SWC)
+const MotionNav = motion.nav;
+const MotionDiv = motion.div;
 
 export default function Navbar() {
     const { scrollY } = useScroll();
@@ -13,8 +22,16 @@ export default function Navbar() {
         setScrolled(latest > 20);
     });
 
+    // ✅ Scroll lock mobile
+    useEffect(() => {
+        document.body.style.overflow = open ? "hidden" : "";
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [open]);
+
     return (
-        <motion.nav
+        <MotionNav
             initial={{ y: -80 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
@@ -28,18 +45,18 @@ export default function Navbar() {
                     PT Coaching
                 </Link>
 
-                {/* Desktop menu */}
+                {/* Desktop */}
                 <div className="hidden md:flex gap-8 text-sm font-medium">
-                    <Link href="/" className="hover:text-red-500 transition">Home</Link>
-                    <Link href="/chi-sono" className="hover:text-red-500 transition">Chi sono</Link>
-                    <Link href="/servizi" className="hover:text-red-500 transition">Servizi</Link>
-                    <Link href="/percorsi" className="hover:text-red-500 transition">Percorsi</Link>
-                    <Link href="/contatti" className="hover:text-red-500 transition">Contatti</Link>
+                    <Link href="/">Home</Link>
+                    <Link href="/chi-sono">Chi sono</Link>
+                    <Link href="/servizi">Servizi</Link>
+                    <Link href="/percorsi">Percorsi</Link>
+                    <Link href="/contatti">Contatti</Link>
                 </div>
 
                 {/* Mobile toggle */}
                 <button
-                    className="md:hidden text-white"
+                    className="md:hidden"
                     onClick={() => setOpen(!open)}
                     aria-label="Apri menu"
                 >
@@ -49,10 +66,10 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile menu animated */}
+            {/* Mobile menu */}
             <AnimatePresence>
                 {open && (
-                    <motion.div
+                    <MotionDiv
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
@@ -72,9 +89,9 @@ export default function Navbar() {
                                 Contatti
                             </Link>
                         </div>
-                    </motion.div>
+                    </MotionDiv>
                 )}
             </AnimatePresence>
-        </motion.nav>
+        </MotionNav>
     );
 }

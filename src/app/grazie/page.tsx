@@ -9,7 +9,7 @@ export default function GraziePage() {
                 </h1>
                 <p className="text-lg text-gray-300 mb-8">
                     Grazie per avermi contattato. Ho ricevuto la tua richiesta e ti
-                    risponderò il prima possibile per fissare la consulenza gratuita.
+                    risponderï¿½ il prima possibile per fissare la consulenza gratuita.
                 </p>
                 <p className="text-gray-400 mb-12">
                     Nel frattempo, preparati a iniziare un percorso fatto di costanza,

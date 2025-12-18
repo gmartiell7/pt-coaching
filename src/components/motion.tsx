@@ -24,7 +24,8 @@ export function MotionButton({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.97 }}
+          whileTap={{ scale: 0.97 }}
+          viewport={{ once: true }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       {children}

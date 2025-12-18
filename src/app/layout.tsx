@@ -34,7 +34,7 @@ export const metadata = {
     ],
     authors: [{ name: "Nome Personal Trainer" }],
     creator: "Nome Personal Trainer",
-    metadataBase: new URL("https://www.tuosito.it"),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL! || "http://localhost:3000"),
     openGraph: {
         title: "Personal Trainer | Allenamento Online e in Presenza",
         description:
@@ -72,7 +72,7 @@ export default function RootLayout({
         <html lang="it" className={`${inter.variable} ${poppins.variable}`}>
             <body className="bg-black text-gray-100 font-inter antialiased">
                 <Navbar />
-                <main className="min-h-screen">{children}</main>
+                <main className="min-h-screen pt-16">{children}</main>
                 <Footer />
             </body>
         </html>
