@@ -3,6 +3,14 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+//da aggiungere per inserire icona whatsApp flottante su tutte le pagine
+  //import WhatsAppFloating from "@/components/WhatsAppFloating";
+//questo invece si inserisce dentro body sotto il main
+  //<body className="min-h-dvh bg-white text-zinc-900">
+      //<Navbar />
+      //<main className="pt-16">{children}</main>
+      //<WhatsAppFloating />
+  //</body>
 
 
 const inter = Inter({
@@ -73,6 +81,7 @@ export default function RootLayout({
             <body className="bg-black text-gray-100 font-inter antialiased">
                 <Navbar />
                 <main className="min-h-screen pt-16">{children}</main>
+                
                 <Footer />
             </body>
         </html>
