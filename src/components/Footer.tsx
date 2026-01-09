@@ -1,3 +1,5 @@
+import WhatsAppLink from "@/components/WhatsAppLink";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -41,14 +43,10 @@ export default function Footer() {
                         <li>Email: info@email.it</li>
                         <li>WhatsApp: +39 000 000 0000</li>
                     </ul>
-                    <Link
-                        href="https://wa.me/393331234567?text=Ciao%2C%20vorrei%20informazioni%20sui%20tuoi%20percorsi"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block mt-4 text-sm text-red-500 hover:underline"
-                    >
+                    <WhatsAppLink className="mt-4 text-sm text-emerald-400 hover:underline">
                         Scrivimi su WhatsApp
-                    </Link>
+                    </WhatsAppLink>
+
                 </div>
 
                 {/* CTA */}
