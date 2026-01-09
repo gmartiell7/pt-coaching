@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
     motion,
@@ -42,7 +43,15 @@ export default function Navbar() {
         >
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
                 <Link href="/" className="font-poppins font-bold text-xl">
-                    PT Coaching
+                    <Image
+                        src="/brand/logoB.png"
+                        alt="Logo palestra"
+                        width={70}
+                        height={28}
+                        className="rounded-sm"
+                        priority
+                    />
+                    
                 </Link>
 
                 {/* Desktop */}

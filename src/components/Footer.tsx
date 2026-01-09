@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,7 +8,9 @@ export default function Footer() {
                 {/* Brand */}
                 <div>
                     <h3 className="font-poppins text-lg font-bold">
-                        Personal Trainer
+                        <Image src="/brand/logoB.png" alt="Logo palestra" width={50} height={30} />
+                        
+
                     </h3>
                     <p className="mt-2 text-sm text-gray-400">
                         Allenamenti in presenza e online
@@ -39,7 +42,9 @@ export default function Footer() {
                         <li>WhatsApp: +39 000 000 0000</li>
                     </ul>
                     <Link
-                        href="/contatti"
+                        href="https://wa.me/393331234567?text=Ciao%2C%20vorrei%20informazioni%20sui%20tuoi%20percorsi"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-block mt-4 text-sm text-red-500 hover:underline"
                     >
                         Scrivimi su WhatsApp
@@ -50,7 +55,7 @@ export default function Footer() {
                 <div>
                     <h4 className="font-semibold mb-4">Inizia ora</h4>
                     <p className="text-sm text-gray-400 mb-4">
-                        Il primo passo � una scelta.
+                        Il primo passo è una scelta.
                     </p>
                     <Link
                         href="/contatti"
@@ -66,7 +71,8 @@ export default function Footer() {
 
             {/* Bottom */}
             <div className="border-t border-white/10 py-6 text-center text-xs text-gray-500">
-                � {new Date().getFullYear()} Personal Trainer � Tutti i diritti riservati
+                © {new Date().getFullYear()} Personal Trainer – Tutti i diritti riservati
+
             </div>
         </footer>
     );

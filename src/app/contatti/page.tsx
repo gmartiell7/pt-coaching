@@ -6,15 +6,38 @@ export const metadata: Metadata = {
         "Contatta il tuo personal trainer a Milano e prenota una consulenza gratuita. Allenamenti personalizzati in presenza e online.",
 };
 
-export default function ContattiPage() {
+type SP = Promise<{ sent?: string; error?: string } | undefined>;
+
+export default async function ContattiPage({
+    searchParams,
+}: {
+    searchParams?: SP;
+}) {
+    const sp = await searchParams;
+    const sent = sp?.sent === "1";
+    const error = sp?.error === "1";
+
     return (
         <main className="min-h-screen pt-16">
             <section className="max-w-5xl mx-auto px-6 py-20">
                 {/* INTRO */}
-                <div className="max-w-2xl mb-16">
+                <div className="max-w-2xl mb-10">
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">
                         Prenota la tua consulenza gratuita
                     </h1>
+
+                    {sent && (
+                        <div className="mb-6 rounded-xl border border-green-500/30 bg-green-500/10 p-4 text-green-200">
+                            Messaggio inviato! Ti risponderò al più presto.
+                        </div>
+                    )}
+
+                    {error && (
+                        <div className="mb-6 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-200">
+                            Errore nell’invio. Controlla i campi e riprova.
+                        </div>
+                    )}
+
                     <p className="text-gray-400 text-lg">
                         Compila il modulo e raccontami i tuoi obiettivi.
                         Ti ricontatterò personalmente per capire come aiutarti a ottenere

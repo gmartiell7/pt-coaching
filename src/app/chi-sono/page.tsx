@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ChiSonoPage() {
@@ -17,9 +18,16 @@ export default function ChiSonoPage() {
                 </div>
 
                 {/* Placeholder immagine */}
-                <div className="w-full h-80 bg-zinc-900 rounded-2xl flex items-center justify-center text-gray-500">
-                    Foto del trainer
+                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-zinc-900">
+                    <Image
+                        src="/images/trainer.jpg"
+                        alt="Foto del trainer"
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                 </div>
+
             </section>
 
             {/* STORIA */}
